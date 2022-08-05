@@ -45,16 +45,17 @@ public class CatControllerUnitTest {
 		
 	
 		//Mimic the behaviour of our Postman actitivity
-		
+		//User -- On  the internet
 		mvc.perform(post("/home/createCat")
 				.content(testCatAsJSON)
 				.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isCreated())
 				.andExpect(content().json(testCatAsJSON));
 		
-		Mockito.verify(this.service, Mockito.times(1)).addCat(testCat);
-		
-		
+		Mockito.verify(this.service, Mockito.times(1)).addCat(testCat);	
 		
 	}
+	
+	// Task I want you to do is write this into your own code and then 
+	// Start creating another test in this class
 }
